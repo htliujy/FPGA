@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
 `define clock_period 20
 
-module Mul_clk_tb();
+module frequency_divider_tb();
     
     reg clk;
     wire out_clk;
@@ -15,8 +15,10 @@ module Mul_clk_tb();
 
     initial 
         begin
+            $dumpfile("test.vcd");
+            $dumpvars;
             #(`clock_period*50);
-            $stop;
+            $finish;
         end
 
     frequency_divider div(.clk_in(clk), .clk_out(out_clk));

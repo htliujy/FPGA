@@ -48,7 +48,7 @@ module frequency_divider(
             out_clk_0 <= 1'd0;
         end
         else begin
-            if(cnt_0 <= cnt_0 <= ((( N-1 )/2)-1))
+            if(cnt_0 <= ((( N-1 )/2)-1))
                 begin
                     cnt_0 <= cnt_0 + 1'd1;
                     out_clk_0 <= 1'd1;
