@@ -17,10 +17,10 @@ module frequency_divider_tb();
         begin
             $dumpfile("test.vcd");
             $dumpvars;
-            #(`clock_period*50);
+            #(`clock_period*100);
             $finish;
         end
 
-    frequency_divider div(.clk_in(clk), .clk_out(out_clk));
+    frequency_divider #(12) f_divider (.clk_in(clk), .clk_out(out_clk));
 
 endmodule

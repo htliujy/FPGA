@@ -1,12 +1,12 @@
 // just for test
 // ref(菜鸟初入FPGA之任意等分频和倍频):http://blog.chinaaet.com/Augus/p/5100001263
 
-module frequency_divider(
+module frequency_divider #(parameter N=7) (
     clk_in, rst_n, clk_out
 );
     input rst_n, clk_in;
     output clk_out;
-    parameter N = 7; //分频系数，可否作为输入参数传递？
+    //parameter N = 7; //分频系数，可否作为输入参数传递？
 
     reg out_clk_1; //时钟上升沿信号；
     reg [9:0]cnt_1; //计数器（上升沿计数）
