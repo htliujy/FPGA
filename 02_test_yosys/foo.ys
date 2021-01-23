@@ -1,0 +1,6 @@
+#!/usr/bin/env yosys
+read_verilog -sv foo.v
+hierarchy -top foo
+proc; opt; techmap; opt
+show -notitle -stretch -format ps -prefix foo_fistshow
+write_verilog synthed_foo.v

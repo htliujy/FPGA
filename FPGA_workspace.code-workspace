@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "01_test_verilog",
+			"path": "01_test_verilog"
+		},
+		{
+			"name": "02_test_yosys",
+			"path": "02_test_yosys"
+		},
+		{
+			"name": "03_frequency_dividers",
+			"path": "03_frequency_dividers"
+		},
+		{
+			"name": "04_frequency_multipliers",
+			"path": "04_frequency_multipliers"
+		}
+	]
+}
