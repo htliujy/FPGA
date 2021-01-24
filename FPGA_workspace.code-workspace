@@ -13,8 +13,7 @@
 			"path": "03_frequency_dividers"
 		},
 		{
-			"name": "04_frequency_multipliers",
-			"path": "04_frequency_multipliers"
+			"path": "04-Flip-flop"
 		}
 	]
 }
