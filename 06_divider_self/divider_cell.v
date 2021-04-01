@@ -25,9 +25,9 @@ module    divider_cell
     begin
         if (!rstn) 
         begin
-            remainder_reg     <= 'b0;
-            divisor_reg       <= 'b0;
-            merchant_reg      <= 'b0;
+            remainder_reg     <= {(M){1'b0}};
+            divisor_reg       <= {(M){1'b1}};
+            merchant_reg      <= {(SERIES){1'b0}};
         end
 
         else

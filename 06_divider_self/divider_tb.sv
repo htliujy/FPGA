@@ -2,10 +2,10 @@
 
 module test ;
 
-    parameter    N = 6 ;
-    parameter    M = 4 ;
-    parameter    M_ACTIVE_MIN = 2;
-    parameter    SERIES = 5;
+    parameter    N = 39 ;
+    parameter    M = 30 ;
+    parameter    M_ACTIVE_MIN = 12;
+    parameter    SERIES = 28;    //(N-M_ACTIVE_MIN + 1)除数有效至少是2bits
 
     reg          clk;
     reg          rstn ;
@@ -23,15 +23,19 @@ module test ;
 
     //driver
     initial begin
+        #2;
         rstn      = 1'b0 ;
-        #7 ;
+        #5 ;
         rstn      = 1'b1 ;
 
         #25 ;
 
-        divisor      = 2;
+        divisor      = 12'b1000_0000_0000;
 
         repeat(32)    #10   divisor   = divisor + 1 ;
+        #10;
+        divisor     = 30'b01_0000_0000_0000_0000_0000_0000_0000;
+        repeat(32) #10   divisor   = divisor + 13 ;
 
     end // initial begin
 
@@ -52,7 +56,7 @@ module test ;
     initial begin
         forever begin
             #100;
-            if ($time >= 1000)  $finish ;
+            if ($time >= 10000)  $finish ;
         end
     end
 

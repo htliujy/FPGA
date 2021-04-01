@@ -60,6 +60,6 @@ module    divider_man
     endgenerate
 
     assign merchant = merchant_t[SERIES-1];
-    assign remainder = remainder[SERIES-1];
+    assign remainder = remainder_t[SERIES-1];
 
 endmodule
