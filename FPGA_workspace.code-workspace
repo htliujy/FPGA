@@ -14,6 +14,12 @@
 		},
 		{
 			"path": "04-Flip-flop"
+		},
+		{
+			"path": "05_divider"
+		},
+		{
+			"path": "06_divider_self"
 		}
 	]
 }
