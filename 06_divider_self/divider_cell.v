@@ -18,10 +18,12 @@ module    divider_cell
     );
 
     wire [M:0] divident;
-
     assign divident = {remainder, 1'b1};
 
-    always @(posedge clk or negedge rstn) 
+    wire [M:0]remainder_fun;
+    assign remainder_fun = {divident - {1'b0, divisor}};
+
+    always @(posedge clk or negedge rstn)
     begin
         if (!rstn) 
         begin
@@ -37,7 +39,7 @@ module    divider_cell
             if (divident >= {1'b0, divisor})
             begin
                 merchant_reg    <= (merchant<<1) + 1'b1;
-                remainder_reg   <= divident - {1'b0, divisor};   //最高位舍去
+                remainder_reg   <= remainder_fun[M-1:0]; //how to truncate
             end
 
             else
