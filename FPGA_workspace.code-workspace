@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "06_divider_self"
+		},
+		{
+			"path": "07_test_data_types"
 		}
 	]
 }

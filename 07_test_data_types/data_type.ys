@@ -1,0 +1,20 @@
+# read design
+read_verilog data_type.v
+hierarchy -check -top data_type
+
+# the high-level stuff
+proc; opt; memory; opt; fsm; opt
+
+# mapping to internal cell library
+techmap; opt
+
+# mapping flip-flops to mycells.lib
+dfflibmap -liberty mycells.lib
+
+# mapping logic to mycells.lib
+abc -liberty mycells.lib
+
+# cleanup
+clean
+
+write_verilog data_type_gate.v
