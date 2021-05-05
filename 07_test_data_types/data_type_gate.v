@@ -15,9 +15,9 @@ module data_type(data1);
   (* src = "data_type.v:1" *)
   (* unused_bits = "0 1 2 3 4 5 6 7" *)
   wire [7:0] \byte1[3] ;
-  (* src = "data_type.v:2" *)
+  (* src = "data_type.v:1" *)
   input [31:0] data1;
-  (* src = "data_type.v:8" *)
+  (* src = "data_type.v:3" *)
   wire [31:0] j;
   assign \byte1[0]  = data1[7:0];
   assign \byte1[1]  = data1[15:8];

@@ -23,6 +23,9 @@
 		},
 		{
 			"path": "07_test_data_types"
+		},
+		{
+			"path": "08_test_operations"
 		}
 	]
 }
