@@ -1,0 +1,39 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fa8e4406cb0 .scope module, "full_adder2" "full_adder2" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "Ai";
+    .port_info 1 /INPUT 1 "Bi";
+    .port_info 2 /INPUT 1 "Ci";
+    .port_info 3 /OUTPUT 1 "So";
+    .port_info 4 /OUTPUT 1 "Co";
+o0x7fa8e4532008 .functor BUFZ 1, C4<z>; HiZ drive
+o0x7fa8e4532038 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x7fa8e441a7b0 .functor XOR 1, o0x7fa8e4532008, o0x7fa8e4532038, C4<0>, C4<0>;
+o0x7fa8e4532068 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x7fa8e441a840 .functor XOR 1, L_0x7fa8e441a7b0, o0x7fa8e4532068, C4<0>, C4<0>;
+L_0x7fa8e441a930 .functor AND 1, o0x7fa8e4532008, o0x7fa8e4532038, C4<1>, C4<1>;
+L_0x7fa8e441aa60 .functor OR 1, o0x7fa8e4532008, o0x7fa8e4532038, C4<0>, C4<0>;
+L_0x7fa8e441aaf0 .functor AND 1, o0x7fa8e4532068, L_0x7fa8e441aa60, C4<1>, C4<1>;
+L_0x7fa8e441ac20 .functor OR 1, L_0x7fa8e441a930, L_0x7fa8e441aaf0, C4<0>, C4<0>;
+v0x7fa8e440a140_0 .net "Ai", 0 0, o0x7fa8e4532008;  0 drivers
+v0x7fa8e441a160_0 .net "Bi", 0 0, o0x7fa8e4532038;  0 drivers
+v0x7fa8e441a200_0 .net "Ci", 0 0, o0x7fa8e4532068;  0 drivers
+v0x7fa8e441a290_0 .net "Co", 0 0, L_0x7fa8e441ac20;  1 drivers
+v0x7fa8e441a330_0 .net "So", 0 0, L_0x7fa8e441a840;  1 drivers
+v0x7fa8e441a410_0 .net *"_ivl_0", 0 0, L_0x7fa8e441a7b0;  1 drivers
+v0x7fa8e441a4c0_0 .net *"_ivl_4", 0 0, L_0x7fa8e441a930;  1 drivers
+v0x7fa8e441a570_0 .net *"_ivl_6", 0 0, L_0x7fa8e441aa60;  1 drivers
+v0x7fa8e441a620_0 .net *"_ivl_8", 0 0, L_0x7fa8e441aaf0;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "full_adder2.v";

@@ -1,0 +1,84 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fc464f041c0 .scope module, "test" "test" 2 3;
+ .timescale -9 -9;
+v0x7fc464f14980_0 .var "ai", 0 0;
+v0x7fc464f14a30_0 .var "bi", 0 0;
+v0x7fc464f14ac0_0 .net "so_get", 0 0, L_0x7fc464f14e80;  1 drivers
+v0x7fc464f14b70_0 .net "so_lose", 0 0, L_0x7fc464f14cf0;  1 drivers
+v0x7fc464f14c20_0 .net "so_normal", 0 0, L_0x7fc464f14fc0;  1 drivers
+S_0x7fc464f04340 .scope module, "u_wire_delay" "time_delay_module" 2 21, 3 1 0, S_0x7fc464f041c0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "ai";
+    .port_info 1 /INPUT 1 "bi";
+    .port_info 2 /OUTPUT 1 "so_lose";
+    .port_info 3 /OUTPUT 1 "so_get";
+    .port_info 4 /OUTPUT 1 "so_normal";
+L_0x7fc464f14cf0/d .functor AND 1, v0x7fc464f14980_0, v0x7fc464f14a30_0, C4<1>, C4<1>;
+L_0x7fc464f14cf0 .delay 1 (20,20,20) L_0x7fc464f14cf0/d;
+L_0x7fc464f14e80/d .functor AND 1, v0x7fc464f14980_0, v0x7fc464f14a30_0, C4<1>, C4<1>;
+L_0x7fc464f14e80 .delay 1 (5,5,5) L_0x7fc464f14e80/d;
+L_0x7fc464f14fc0 .functor AND 1, v0x7fc464f14980_0, v0x7fc464f14a30_0, C4<1>, C4<1>;
+v0x7fc464f045b0_0 .net "ai", 0 0, v0x7fc464f14980_0;  1 drivers
+v0x7fc464f14650_0 .net "bi", 0 0, v0x7fc464f14a30_0;  1 drivers
+v0x7fc464f146f0_0 .net "so_get", 0 0, L_0x7fc464f14e80;  alias, 1 drivers
+v0x7fc464f14780_0 .net "so_lose", 0 0, L_0x7fc464f14cf0;  alias, 1 drivers
+v0x7fc464f14820_0 .net "so_normal", 0 0, L_0x7fc464f14fc0;  alias, 1 drivers
+    .scope S_0x7fc464f041c0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fc464f14980_0, 0, 1;
+    %delay 25, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fc464f14980_0, 0, 1;
+    %delay 35, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fc464f14980_0, 0, 1;
+    %delay 40, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fc464f14980_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fc464f14980_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x7fc464f041c0;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fc464f14a30_0, 0, 1;
+    %delay 70, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fc464f14a30_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fc464f14a30_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x7fc464f041c0;
+T_2 ;
+    %vpi_call 2 29 "$dumpfile", "time_delay_module.vcd" {0 0 0};
+    %vpi_call 2 30 "$dumpvars" {0 0 0};
+T_2.0 ;
+    %delay 100, 0;
+    %vpi_func 2 34 "$time" 64 {0 0 0};
+    %cmpi/u 1000, 0, 64;
+    %flag_inv 5; GE is !LT
+    %jmp/0xz  T_2.1, 5;
+    %vpi_call 2 35 "$finish" {0 0 0};
+T_2.1 ;
+    %jmp T_2.0;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test.sv";
+    "time_delay_module.v";

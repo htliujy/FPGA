@@ -26,6 +26,21 @@
 		},
 		{
 			"path": "08_test_operations"
+		},
+		{
+			"path": "1.7_full_adder"
+		},
+		{
+			"path": "1.8-time_delay_module"
+		},
+		{
+			"path": "1.9_code_block"
+		},
+		{
+			"path": "1.10_Assignment"
+		},
+		{
+			"path": "1.11_time_control"
 		}
 	]
 }
