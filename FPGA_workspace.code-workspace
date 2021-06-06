@@ -41,6 +41,15 @@
 		},
 		{
 			"path": "1.11_time_control"
+		},
+		{
+			"path": "1.12_block"
+		},
+		{
+			"path": "1.15_loop"
+		},
+		{
+			"path": "1.16_Procedural_Continuous_Assignment"
 		}
 	]
 }
