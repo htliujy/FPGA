@@ -50,6 +50,12 @@
 		},
 		{
 			"path": "1.16_Procedural_Continuous_Assignment"
+		},
+		{
+			"path": "1.17_module_and_terminal"
+		},
+		{
+			"path": "1.19_instanize_with_param"
 		}
 	]
 }
