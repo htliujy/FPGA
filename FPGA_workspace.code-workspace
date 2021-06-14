@@ -56,6 +56,9 @@
 		},
 		{
 			"path": "1.19_instanize_with_param"
+		},
+		{
+			"path": "1.20_function"
 		}
 	]
 }
