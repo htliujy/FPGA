@@ -62,6 +62,9 @@
 		},
 		{
 			"path": "1.21_task"
+		},
+		{
+			"path": "1.22_state_machine"
 		}
 	]
 }
