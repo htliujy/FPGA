@@ -65,6 +65,12 @@
 		},
 		{
 			"path": "1.22_state_machine"
+		},
+		{
+			"path": "1.23_race_hazard"
+		},
+		{
+			"path": "1.25_testbench"
 		}
 	]
 }
