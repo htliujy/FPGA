@@ -71,6 +71,12 @@
 		},
 		{
 			"path": "1.25_testbench"
+		},
+		{
+			"path": "1.26_pipeline"
+		},
+		{
+			"path": "1.28_fir"
 		}
 	]
 }
